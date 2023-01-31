@@ -1,0 +1,18 @@
+GRANT CREATE ON Cryptopredict_script2.* TO grafanaReader@'%' IDENTIFIED BY 'passw0rd*';
+
+
+grant create on Cryptopredict_script2.* to 'grafanaReader'@'%';
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE on Cryptopredict_script2.* to 'grafanaReader'@'%';
+
+flush privileges;
+
+select * from mysql.user where User='grafanaReader';
+
+REVOKE PRIVILEGES on *.* FROM 'grafanaReader'@'%';
+
+GRANT ALL PRIVILEGES on Cryptopredict_script2.* to 'grafanaReader'@'%';
+
+
+
+folder_path = 'C:\Users\ropai\Python\Santander\VMAX_ALL'

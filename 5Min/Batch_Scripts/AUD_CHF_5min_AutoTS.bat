@@ -1,0 +1,1 @@
+call "C:\Users\ropai\anaconda3\Scripts\activate.bat" tensorflow & cd "C:\Users\ropai\Python\Quotex.IO\5Min" & python Script2_AUD-CHF_YAHOO_5min-Autots_GluonTS-OFF_Simple-10D_v1.py

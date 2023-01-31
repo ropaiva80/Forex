@@ -1,0 +1,63 @@
+
+#=====================================================================#
+
+#Example 1#
+
+from sqlalchemy import create_engine
+import pymysql
+
+db_connection_str = 'mysql+pymysql://root:kostov@localhost:3306/test'
+db_connection = create_engine(db_connection_str)
+
+df = pd.read_sql('SELECT * FROM girls', con=db_connection)
+df.to_dict('list')
+
+#=====================================================================#
+
+#Activate Tensorflow#
+
+from sqlalchemy import create_engine
+import pymysql
+import pandas as pd
+
+sqlEngine = create_engine('mysql+pymysql://grafanaReader:passw0rd*@192.168.43.125:30306/Cryptopredict_script2', pool_recycle=3600)
+dbConnection    = sqlEngine.connect()
+frame = pd.read_sql("select * from bitcoin_v1_coinbase", dbConnection);
+
+
+
+## Don't wrap repr(DataFrame) across additional lines
+pd.set_option('display.expand_frame_repr', False)
+
+#Outcome
+print(frame)
+
+#=====================================================================#
+
+# Examples - out of scope#
+#Convert SQL Dataframe to Dictionary
+
+dict1 = df.to_dict('records')
+dict2 = df.to_dict('list')
+
+
+#=====================================================================
+#Outcome
+
+1) df.to_dict()
+[{'id': 1, 'name': 'Emma'},
+ {'id': 2, 'name': 'Ann'},
+ {'id': 3, 'name': 'Kim'},
+ {'id': 4, 'name': 'Olivia'},
+ {'id': 5, 'name': 'Victoria'}]
+
+2) df.to_dict('list')
+{'id': [1, 2, 3, 4, 5], 'name': ['Emma', 'Ann', 'Kim', 'Olivia', 'Victoria']}
+
+3) df.to_dict('index')
+{0: {'id': 1, 'name': 'Emma'},
+ 1: {'id': 2, 'name': 'Ann'},
+ 2: {'id': 3, 'name': 'Kim'},
+ 3: {'id': 4, 'name': 'Olivia'},
+ 4: {'id': 5, 'name': 'Victori
+
